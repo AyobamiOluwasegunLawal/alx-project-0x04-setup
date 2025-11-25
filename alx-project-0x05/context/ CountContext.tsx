@@ -6,7 +6,7 @@ interface CounterContextProps {
   increment: () => void;
   decrement: () => void;
 }
-export const CounterContext = createContext<CounterContextProps | undefined>(
+export const CountContext = createContext<CounterContextProps | undefined>(
   undefined
 );
 
@@ -15,14 +15,14 @@ export const CountProvider = ({ children }: { children: ReactNode }) => {
   const increment = () => setCount((count) => count + 1);
   const decrement = () => setCount((count) => (count > 0 ? count - 1 : 0));
   return (
-    <CounterContext.Provider value={{ count, increment, decrement }}>
+    <CountContext.Provider value={{ count, increment, decrement }}>
       {children}
-    </CounterContext.Provider>
+    </CountContext.Provider>
   );
 };
 
 export const useCount = () => {
-  const context = useContext(CounterContext);
+  const context = useContext(CountContext);
 
   if (!context) {
     throw new Error("useCount must be used within a Count Provider");
