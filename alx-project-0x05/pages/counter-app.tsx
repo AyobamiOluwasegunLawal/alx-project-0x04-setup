@@ -1,4 +1,4 @@
-import { useCount } from "@/context/ CountContext";
+import { useCount } from "@/context/CountContext";
 import { useState } from "react";
 
 const CounterApp: React.FC = () => {

@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import Button from "../common/Button";
-import { useCount } from "@/context/ CountContext";
+import { usePathname } from "next/navigation";
+import { useCount } from "@/context/CountContext";
 
 const Header: React.FC = () => {
   const pathname = usePathname();
